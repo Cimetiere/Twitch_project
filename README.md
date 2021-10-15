@@ -21,7 +21,7 @@ To install these librairies you need to download anaconda before and install it 
 <ul>
     <li>Pandas</li>
     <li>Numpy</li>
-    <li>Sklearn</li>
+    <li>Scikit-learn</li>
     <li>Matplotlib</li>
     <li>Plotly express</li>
     <li>Plotlty graph objects</li>
