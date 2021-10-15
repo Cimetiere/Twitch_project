@@ -41,7 +41,7 @@ To install these librairies you need to download anaconda before and install it 
 </br></br>
 
 <p align="center">
-    <font color="#b9a3e3" size=3> [ <strong> Important </strong> Turn your theme in dark mode 🌙 ] </font>
+    <font color="purple" size=3> [ <strong> Important </strong> Turn your theme in dark mode 🌙 ] </font>
 </br>
 <img src="dark.gif" width=600 >
 
