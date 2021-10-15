@@ -16,7 +16,7 @@ I'm a 21 student specialize in <strong>Big data & Machine learning </strong> and
 # <img src="test.png" width=20 >  Librairies needed
 
 <p>
-To install these librairies you need to download anaconda before and install it on your own environnement. </br> <em> <font size=2>Wordcloud librairie isn't working with pip </font> </em>
+To install these librairies you need to download anaconda before and install it on your own environnement. </br> <em> <font size=2>Wordcloud librairie with pip isn't working on streamlit, that's why you need to use anaconda. </font> </em>
 </p>
 <ul>
     <li>Pandas</li>
