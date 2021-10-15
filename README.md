@@ -9,7 +9,7 @@
 
 # <img src="test.png" width=20 >  Introduction 
 <p>
-I'm a 21 student specialize in <strong>Big data & Machine learning </strong> and I'm presenting to you my work on my <strong> Personnal Twitch Data </strong>. I discovered this streaming platform in 2015 and until today I watch streamers on it. So, I'm a big consumer of this and I have enjoyed working on this project and I hope that you will like it too. 
+I'm a 21 student specialize in <strong>Big data & Machine learning </strong> and I'm presenting to you my work on my <strong> Personnal Twitch Data </strong>. I discovered this streaming platform in 2015 and until today I watch streamers on it. So, I'm a big consumer of this and I have enjoyed working on this project. I hope that you will like it too. 
 </p>
 </br></br>
 
