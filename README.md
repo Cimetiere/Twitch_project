@@ -18,6 +18,9 @@ I'm a 21 student specialize in <strong>Big data & Machine learning </strong> and
 <p>
 To install these librairies you need to download anaconda before and install it on your own environnement. </br> <em> <font size=2>Wordcloud librairie with pip isn't working on streamlit, that's why you need to use anaconda. </font> </em>
 </p>
+<p>
+    You also need to install ffmep, this logiciel will create the little video from the bar chart race. </br> Here is the downoald link : https://www.ffmpeg.org/
+</p>
 <ul>
     <li>Pandas</li>
     <li>Numpy</li>
