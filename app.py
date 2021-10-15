@@ -489,7 +489,7 @@ if add_selectbox == "Ads on Twitch":
             type="rect",
             xref="x",
             yref="paper",
-            x0=-100,
+            x0=-20,
             y0=0,
             x1=400,
             y1=1,
