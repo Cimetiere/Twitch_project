@@ -62,7 +62,7 @@ To install these librairies you need to download anaconda before and install it 
 
 <img src="heatmap.gif">
 </br>
-Heatmap from the first page
+Heatmap 
 
 </br></br>
 <p align="center">
