@@ -85,9 +85,7 @@ Sunburst from the second page
 <img src="page.gif">
 </p>
 
-# <img src="test.png" width=20 > Some exemples of the 2 page content
-
-</br></br>
+</br>
 Sunburst from the second page
 </br></br>
 <p align="center">
