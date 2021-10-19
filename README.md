@@ -66,8 +66,9 @@ To install these librairies you need to download anaconda before and install it 
 
 
 </br></br>
+
 <img src="sunburst.gif"  >
-)
+
 
 </br></br>
 <img src="page.gif"  >
