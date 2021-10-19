@@ -53,7 +53,7 @@ To install these librairies you need to download anaconda before and install it 
 
 </br></br>
 
-# <img src="test.png" width=20 > Some exemples of the content
+# <img src="test.png" width=20 > Some exemples of the first page content
 
 
 
@@ -70,13 +70,16 @@ Heatmap from the first page
 <p align="center">
 <img src="sunburst.gif">
     </br>
-Sunburst from the second page
-</br></br>
-<p align="center">
-<img src="page.gif">
 
 <p align="center">
 Contents from the first page 
     </p>
-
+</br></br>
+# <img src="test.png" width=20 > Some exemples of the second page content
+</br></br>
+Sunburst from the second page
+</br></br>
+<p align="center">
+<img src="page.gif">
+</p>
 
