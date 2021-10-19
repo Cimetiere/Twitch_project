@@ -76,7 +76,7 @@ Sunburst from the second page
 <img src="page.gif">
 
 <p align="center">
-First page 
+Contents from the first page 
     </p>
 
 
