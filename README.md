@@ -62,15 +62,15 @@ To install these librairies you need to download anaconda before and install it 
 </br>
 <p align="center">
 
+<img src="heatmap.gif" width=20 >
 
-![Alt Text](heatmap.gif)
-
-</br></br>
-
-![Alt Text](sunburst.gif)
 
 </br></br>
+<img src="sunburst.gif" width=20 >
+)
 
-![Alt Text](page.gif)
+</br></br>
+<img src="page.gif" width=20 >
+
 First page 
 </p>
