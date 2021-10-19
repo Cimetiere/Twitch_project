@@ -89,6 +89,6 @@ Sunburst from the second page
 Sunburst from the second page
 </br></br>
 <p align="center">
-<img src="wordcloud.jpg">
+<img src="wordcloud.JPG">
 </p>
 
