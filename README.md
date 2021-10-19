@@ -66,7 +66,7 @@ Heatmap from the first page
 
 </br></br>
 <p align="center">
-<img src="bar.gif" width=1000>
+<img src="bar.gif" width=800>
     </br>
 
 <p align="center">
