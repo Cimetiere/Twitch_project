@@ -9,7 +9,7 @@
 
 # <img src="test.png" width=20 >  Introduction 
 <p>
-I'm a 21 student specialize in <strong>Big data & Machine learning </strong> and I'm presenting to you my work on my <strong> Personnal Twitch Data </strong>. I discovered this streaming platform in 2015 and until today I watch streamers on it. So, I'm a big consumer of this and I have enjoyed working on this project. This project contain more than <strong> 10 Data representation </strong> tools like <em> Bar/Scatter/Aera plot, bar chart race, wordcloud and heatmap </em>. Some of them can be personalize, thanks to widgets.
+I'm a 21 student specialize in <strong>Big data & Machine learning </strong> and I'm presenting to you my work on my <strong> Personnal Twitch Data </strong>. I discovered this streaming platform in 2015 and until today I watch streamers on it. So, I'm a big consumer of this and I have enjoyed working on this project. This project contain more than <strong> 10 Data representations </strong> tools like <em> Bar/Scatter/Aera plot, bar chart race, wordcloud and heatmap </em>. Some of them can be personalize, thanks to widgets.
 </br></br> So I hope that you will like it! 
 </p>
 </br></br>
