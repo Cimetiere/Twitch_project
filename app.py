@@ -16,10 +16,11 @@ import pydeck as pdk
 import folium
 from streamlit_folium import folium_static
 
+# Change the fivicon and title of the page
 st.set_page_config(page_title='My personal Twitch Data Analysis',page_icon = "logo.png", layout = 'wide', initial_sidebar_state = 'auto')
 
 
-
+# Load all csv files
 ads = pd.read_csv("Furraly_ads.csv")
 chats = pd.read_csv("Furraly_chats_cheers_sub_notifications.csv")
 follow = pd.read_csv("Furraly_follow_unfollow.csv")
@@ -27,6 +28,7 @@ watched = pd.read_csv("Furraly_minutes_watched.csv")
 pages = pd.read_csv("Furraly_pages_viewed.csv")
 played = pd.read_csv("Furraly_video_s_played.csv")
 
+# Create a variable containing all the name of streamers I follow
 follow2 = follow["channel"].drop_duplicates()
 follow2 = pd.DataFrame(follow2)
 follow2_copy = follow2.copy()
@@ -34,6 +36,7 @@ follow2_copy = follow2_copy.sort_values(by=["channel"])
 follow2 = follow2.append({'channel': "All streamers"}, ignore_index=True)
 follow2 = follow2.sort_values(by=["channel"])
 
+# Create some functions
 def get_weekday(dt):
     return dt.weekday()
 
@@ -68,6 +71,7 @@ def count_rows2(rows):
 def summ(total):
     return total["context"].sum()
 
+# Menu 
 add_selectbox = st.sidebar.selectbox(
     "Select a page:",
     ("Home","Analyse of my time spend", "Streamers follow", "Ads on Twitch")
@@ -80,7 +84,7 @@ if add_selectbox == "Home":
     st.markdown('#')
  
     st.header("How work Twitch ?")
-    ################## Creation d'un arbre ##################
+    ################## Create a tree ##################
     graph = graphviz.Digraph()
 
     graph.edge('Viewer', 'watch a streamer')
@@ -115,7 +119,7 @@ if add_selectbox == "Home":
     st.markdown('#')
 
     
-    
+    # Create a map to plot the headquarter of Twitch
     st.header("Localisation of the Twitch seat")
     st.markdown("**Californie** - San Francisco")
     m = folium.Map(location=[37.79123255262682, -122.40349458435077], zoom_start=13)
@@ -131,7 +135,7 @@ if add_selectbox == "Analyse of my time spend":
     
 
     
-    ################## Creation d'un heatmap ##################
+    ################## Create an heatmap ##################
     st.header("Heatmap showing the timespend in hours on Twitch")
     ans = st.select_slider('Choose a year',options=['2015', '2016', '2017', '2018', '2019', '2020', '2021','All'])
     values = st.slider('Choose a period (1:January / 12:December)',1, 12 ,(5, 7))
@@ -170,11 +174,12 @@ if add_selectbox == "Analyse of my time spend":
     st.markdown('#')
     st.markdown('#')
 
-    ################## Creation d'un aera plot ##################
+    ################## Create an aera plot ##################
     st.subheader("Aera plot showing the distribution of the number of hours watched on Twitch during the year 2021 ")
     watched3 = watched.copy()
     watched3["day"] = pd.to_datetime(watched3["day"])
     watched3 = watched3.set_index(watched3["day"])
+    
     vision = watched3[(watched3["day"] > "2020-12-31")].groupby(["channel_name",pd.Grouper(freq='M')], as_index=True).apply(summ)
 
     df2 = pd.DataFrame(vision)
@@ -185,6 +190,7 @@ if add_selectbox == "Analyse of my time spend":
     df2 = pd.merge(df2,follow[['day', 'channel']],on='channel', how='outer')
     df2["day"] = pd.to_datetime(df2["day"])
     df2["day"] = df2["day"].map(get_year)
+    
     df2.dropna(subset = ["day"], inplace=True)
     df2.dropna(subset = ["time watched in minutes"], inplace=True)
 
@@ -197,11 +203,14 @@ if add_selectbox == "Analyse of my time spend":
 
     st.markdown('#')
     st.markdown('#')
-    ################## Creation d'un bar plot ##################
+    
+    
+    ################## Create a bar plot ##################
     st.subheader("Graph representing the number of hours watched per streamers as a function of periods of 2021")
     watched4 = watched.copy()
     watched4["day"] = pd.to_datetime(watched4["day"])
     watched4 = watched4.set_index(watched4["day"])
+    
     vision2 = watched4[(watched4["day"] > "2020-12-31")].groupby(["channel_name",pd.Grouper(freq='M')], as_index=True).apply(summ)
 
     df3 = pd.DataFrame(vision)
@@ -219,14 +228,17 @@ if add_selectbox == "Analyse of my time spend":
     st.markdown('#')    
     st.markdown('#')
 
-    ################## Creation d'un deuxieme bar plot ##################
+    ################## Create a second bar plot ##################
     st.subheader("Graph representing the number of hours watched per streamers as a function of years")
+    
     df4 = watched.copy()
     df4["day"] = pd.to_datetime(df4["day"])
     df4 = df4.set_index(df4["day"])
     df4["day"] = df4["day"].map(get_year) 
     df4["context"] = (df4["context"] / 60).round(0)
+    
     df4.columns = ("event","Years","device","player","Viewer","channel_name","Hours")
+    
     fig6 = px.histogram(df4, x='channel_name', y='Hours',color='Years')
     fig6.update_layout(xaxis={'categoryorder':'total descending'},bargroupgap=0.8,width=800,height=700)
     st.plotly_chart(fig6)
@@ -235,11 +247,14 @@ if add_selectbox == "Analyse of my time spend":
     st.markdown('#')
     st.markdown('#')
     st.markdown('#')
-################## Creation d'un bar chart race ##################
+    
+################## Create a personalize bar chart race ##################
     st.header("Create your own bar chart based on the total number of minutes spent on a channel")
     st.markdown('#')
     st.markdown('#')
+    
     streamer2 = st.multiselect('Choose some streamers names :',follow2_copy["channel"])
+    
     col1,col2 = st.columns(2)
     debut = col1.date_input("Select a start date :")
     fin = col2.date_input("Select a end date :")
@@ -262,45 +277,41 @@ if add_selectbox == "Analyse of my time spend":
         
         fin = reduce(lambda df_left,df_right: pd.merge(df_left, df_right,left_index=True, right_index=True,how='outer'),total)
  
-        fin.columns = liste   
+        fin.columns = liste
         fin = fin.fillna(0)
         fin = fin.cumsum()    
         
-
+        # Create a function to plot the total of minutes I have watched for all streamers
         def summary(values, ranks):
             total_minutes = int(round(values.sum(), -2))
             s = f'Total minutes  : {total_minutes: .0f}'
             return {'x': .99, 'y': .05, 's': s, 'ha': 'right', 'size': 8}
  
         st.write(bcr.bar_chart_race(df=fin, sort='asc',period_summary_func=summary))
-
-
+    
         warning.empty()
         
 
-
-
-
-
-
-
 if add_selectbox == "Streamers follow":
-################## Creation d'un wordcloud ##################
+    
+################## Create a wordcloud ##################
     st.header("Creating a wordcloud")
     streamer = st.multiselect('Choose some streamers names :',follow2["channel"])
     
-    
     if streamer:
         chats = chats[chats["event_type"] == "chat"]
+        
         if "All streamers" not in streamer:    
             chats = chats[chats["channel"].isin(streamer)]
+            
         chats["context"] = chats["context"].astype('string')
         chats["context"].dtypes
         text = chats["context"].tolist()
         text = ' '.join([str(item) for item in text])
         mask = np.array(Image.open("logo2.png"))
         mask = cv2.bitwise_not(mask)
-
+        
+        # Create a function to change the color of letters
         def random_color_func(word=None, font_size=None, position=None,  orientation=None, font_path=None, random_state=None):
             h = int(360.0 * 21.0 / 100)
             s = int(100.0 * 255.0 / 100)
@@ -317,7 +328,8 @@ if add_selectbox == "Streamers follow":
 
     st.markdown('#')
     st.markdown('#')
-################## Creation d'un pie chart ##################
+    
+################## Create a pie chart ##################
     st.header("Numbers of streamer followed per year")
     follow2 = follow.copy()
     follow2 = follow2[follow2["event_type"] == "follow"]
@@ -333,22 +345,21 @@ if add_selectbox == "Streamers follow":
     fig7.update_traces(textinfo='value')
     st.write(fig7)
 
-################## Creation d'un sunburst ##################
+################## Creata a sunburst ##################
     st.markdown('#')
     st.markdown('#')
     st.header("Name of streamers followed per year")
+    
     follow3 = follow.copy()
     follow3 = follow3[follow3["event_type"] == "follow"]
     follow3 = follow3.drop_duplicates() #ISSUE
     follow3["day"] = pd.to_datetime(follow3["day"])
+    
     follow3["day"] = follow3["day"].map(get_year)
 
     fig10 = px.sunburst(follow3, path=['day','channel'])
     fig10.update_traces(textfont=dict(color="white"))
     st.write(fig10)
-
-
-
 
 
 if add_selectbox == "Ads on Twitch":
@@ -358,7 +369,8 @@ if add_selectbox == "Ads on Twitch":
     test = test.reset_index()
 
     response = test[((test["event_type"] == "video_ad_request_declined") & (test["day"] > 40)) | ((test["event_type"] == "video_ad_request_response") & (test["day"] > 170)) ]
-
+    
+    # I delete all these streamers because the bar plot wont be nice to watch
     index_names = response[response['channel'] == "solaryfortnite"].index
     index_names2 = response[response['channel'] == "alexclick"  ].index              
     index_names3 = response[response['channel'] == "rasmelthor" ].index                      
@@ -376,7 +388,8 @@ if add_selectbox == "Ads on Twitch":
     response.drop(index_names6, inplace = True)
     response.drop(index_names7, inplace = True)
     response.drop(index_names8, inplace = True)
-
+    
+    
     for i in range (0,len(response) - 1):
         if i % 2 == 0:
             numb = response.iloc[i]["day"] + response.iloc[i+1]["day"]
@@ -437,15 +450,14 @@ if add_selectbox == "Ads on Twitch":
   
     st.write(fig13)
 
-    
-        
+     
 
-##################    On which device do I watch Twitch ?  ################## 
+##################Create a scatter plot################## 
     st.markdown('#')
     st.markdown('#')
     st.subheader("Scatter plot showing the total number group by platforms I use to watch Twitch by channels")
     
-    
+   
     liste = []
     
     scat = st.multiselect('Choose a streamer name :',follow2["channel"],['All streamers'])
@@ -484,7 +496,6 @@ if add_selectbox == "Ads on Twitch":
 
     fig14 = px.scatter(test3, x="index", y="channel_name",size="event_type",color="player", symbol="player",color_discrete_map={'site': 'rgba(8,230,48,0.42)'})
     fig14.update_layout(yaxis={'categoryorder':'category descending'},shapes=[
-        # 1st highlight during Feb 4 - Feb 6
  dict(
             type="rect",
             xref="x",
@@ -503,7 +514,7 @@ if add_selectbox == "Ads on Twitch":
     st.write(fig14)
 
 
-##################   Create an heatmap for hours ##################   
+##################Create an heatmap for hours ##################   
     st.markdown('#')
     st.markdown('#')
     st.header("Heatmap showing the number of ads I watched during weekdays")
