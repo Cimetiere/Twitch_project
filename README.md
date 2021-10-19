@@ -53,7 +53,7 @@ To install these librairies you need to download anaconda before and install it 
 
 </br></br>
 
-# <img src="test.png" width=20 > Some exemples of the first page content
+# <img src="test.png" width=20 > Some exemples of the 1 page content
 
 
 
@@ -76,12 +76,21 @@ Contents from the first page
     </p>
 </br></br>
 
-# <img src="test.png" width=20 > Some exemples of the second page content
+# <img src="test.png" width=20 > Some exemples of the 2 page content
 
 </br></br>
 Sunburst from the second page
 </br></br>
 <p align="center">
 <img src="page.gif">
+</p>
+
+# <img src="test.png" width=20 > Some exemples of the 2 page content
+
+</br></br>
+Sunburst from the second page
+</br></br>
+<p align="center">
+<img src="wordcloud.jpg">
 </p>
 
