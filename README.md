@@ -98,7 +98,7 @@ Contents from the first page
 
 </br></br>
 <p align="center">
-<img src="wordcloud.JPG">
+<img src="wordcloud.JPG" width=500>
 Wordcloud from the second page
 </p>
 
