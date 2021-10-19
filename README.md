@@ -100,6 +100,6 @@ Contents from the first page
 <p align="center">
 <img src="wordcloud.JPG" width=800>
     </br>
-Wordcloud from the second page
+Wordcloud 
 </p>
 
