@@ -66,11 +66,11 @@ Heatmap from the first page
 
 </br></br>
 <p align="center">
-<img src="bar.gif" width=80>
+<img src="bar.gif" width=200>
     </br>
 
 <p align="center">
-Contents from the first page 
+Bar chart race with many streamers
     </p>
     
 </br></br>
@@ -86,10 +86,11 @@ Contents from the first page
 # <img src="test.png" width=20 > Some exemples of the 2 page content
 
 </br></br>
-Sunburst from the second page
+
 </br></br>
 <p align="center">
 <img src="sunburst.gif">
+    Sunburst
 </p>
 
 </br>
