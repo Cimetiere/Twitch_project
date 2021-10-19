@@ -90,6 +90,7 @@ Contents from the first page
 </br></br>
 <p align="center">
 <img src="sunburst.gif">
+    </br>
     Sunburst
 </p>
 
