@@ -72,6 +72,8 @@ To install these librairies you need to download anaconda before and install it 
 <p align="center">
 <img src="page.gif">
 
+<p align="center">
 First page 
+    </p>
 
 
