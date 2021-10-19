@@ -60,7 +60,7 @@ To install these librairies you need to download anaconda before and install it 
 
 </br>
 </br>
-
+<p align="center">
 
 
 ![Alt Text](heatmap.gif)
@@ -72,4 +72,5 @@ To install these librairies you need to download anaconda before and install it 
 </br></br>
 
 ![Alt Text](page.gif)
-<p align="center"> First page </p>
+First page 
+</p>
