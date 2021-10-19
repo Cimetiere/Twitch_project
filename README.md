@@ -75,7 +75,9 @@ Heatmap from the first page
 Contents from the first page 
     </p>
 </br></br>
+
 # <img src="test.png" width=20 > Some exemples of the second page content
+
 </br></br>
 Sunburst from the second page
 </br></br>
